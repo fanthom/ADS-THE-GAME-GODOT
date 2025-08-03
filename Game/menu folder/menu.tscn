@@ -1,0 +1,117 @@
+[gd_scene load_steps=7 format=3 uid="uid://dwrd07emyonpa"]
+
+[ext_resource type="Script" uid="uid://duc3sqv1osyc7" path="res://Game/menu folder/menu.gd" id="1_6pnju"]
+[ext_resource type="FontFile" uid="uid://ysposccu5faj" path="res://COMIC.TTF" id="2_3tgd8"]
+[ext_resource type="FontFile" uid="uid://bgrvcsacps057" path="res://COMICBD.TTF" id="3_34tmy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4hy44"]
+font = ExtResource("2_3tgd8")
+font_size = 27
+outline_color = Color(1, 1, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ytr4m"]
+line_spacing = 0.0
+font = ExtResource("3_34tmy")
+font_size = 51
+font_color = Color(0.851118, 0.434416, 1, 1)
+outline_size = 14
+shadow_size = 40
+shadow_color = Color(1, 0.00999999, 0.0264997, 0)
+shadow_offset = Vector2(15, 11)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_l48gv"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6pnju")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.368627, 0.0901961, 0.921569, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -42.0
+offset_right = 494.0
+grow_vertical = 0
+
+[node name="placeholder" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "FEITO POR FANTHOM/THOMAS"
+label_settings = SubResource("LabelSettings_4hy44")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "3°A ADS
+THE GAME"
+label_settings = SubResource("LabelSettings_ytr4m")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="play" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" groups=["button"]]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_3tgd8")
+theme_override_font_sizes/font_size = 58
+action_mode = 0
+text = "PLAY"
+flat = true
+
+[node name="controls" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" groups=["button"]]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("3_34tmy")
+theme_override_font_sizes/font_size = 58
+action_mode = 0
+text = "CONTROLES"
+flat = true
+
+[node name="site" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" groups=["button"]]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_3tgd8")
+theme_override_font_sizes/font_size = 58
+text = "SITE"
+flat = true
+
+[node name="quit" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer" groups=["button"]]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_3tgd8")
+theme_override_font_sizes/font_size = 58
+action_mode = 0
+text = "SAIR"
+icon = SubResource("ViewportTexture_l48gv")
+flat = true
